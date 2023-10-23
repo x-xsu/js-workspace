@@ -1,0 +1,28 @@
+.vacancy {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 16px;
+  background: #FFF;
+}
+
+.vacancy__img {
+  margin-bottom: 4px;
+}
+
+.vacancy__company {
+  font-size: 20px;
+}
+
+.vacancy__title {
+  font-weight: 400;
+  border-radius: 4px;
+  background: #EAECFF;
+  padding: 3px 5px;
+}
+
+.vacancy__field {
+  color: #ccc;
+}

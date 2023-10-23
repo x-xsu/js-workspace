@@ -1,0 +1,14 @@
+@import "style/normalize.css";
+
+@import "style/choices.min.css";
+@import "style/choices.css";
+
+@import "style/style.css";
+@import "style/header.css";
+@import "style/banner.css";
+@import "style/vacancies.css";
+@import "style/filter.css";
+@import "style/cards.css";
+@import "style/checkbox.css";
+@import "style/vacancy.css";
+@import "style/footer.css";

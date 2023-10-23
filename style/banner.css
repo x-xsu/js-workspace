@@ -1,0 +1,29 @@
+.banner {
+  padding-block: 60px 50px;
+}
+
+.banner__container {
+  position: relative;
+  padding-block: 57px;
+}
+
+.banner__container::after {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: 0;
+  width: 421px;
+  height: 421px;
+  background: url("../img/laptop.png") no-repeat center/contain;
+}
+
+.banner__title {
+  font-size: 90px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.banner__title span {
+  display: block;
+  color: #2A18FF;
+}

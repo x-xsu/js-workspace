@@ -1,0 +1,71 @@
+.filter {
+  position: relative;
+}
+
+.filter__title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+.filter__form,
+.filter__fieldset,
+.filter__checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__form {
+  gap: 32px;
+}
+
+.filter__fieldset {
+  align-items: start;
+  gap: 8px;
+}
+
+.filter__legend {
+  margin-bottom: 12px;
+}
+
+.filter__select {
+
+}
+
+
+.filter__range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.filter__input {
+  flex: 1 1 50%;
+  width: 100%;
+  padding-inline: 16px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.filter__input::placeholder {
+  color: #ccc;
+}
+
+.filter__checkboxes {
+  gap: 32px;
+}
+
+.filter__button {
+  padding: 8px 24px;
+  border-radius: 4px;
+  background-color: #A6ADFF;
+  color: #171717;
+}
+
+.filter__reset {
+  position: absolute;
+  top: 7px;
+  right: 0;
+  color: #ccc;
+}
