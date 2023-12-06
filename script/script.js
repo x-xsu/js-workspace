@@ -6,6 +6,7 @@ const getData = async (url, cbSuccess, cbError) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data)
     cbSuccess(data)
   } catch (err) {
     cbError(err)
@@ -44,17 +45,7 @@ const renderError = err => {
 }
 
 const createDetailVacancy = ({
-                               id,
-                               title,
-                               company,
-                               description,
-                               email,
-                               salary,
-                               type,
-                               format,
-                               experience,
-                               location,
-                               logo
+                               id, title, company, description, email, salary, type, format, experience, location, logo
                              }) => `
   <article class="detail">
     <div class="detail__header">
@@ -90,7 +81,6 @@ document.documentElement.style.setProperty("--scrollbarWidth", `${scrollbarWidth
 const renderModal = data => {
   const modalMain = modal.querySelector(".modal__main");
   modalMain.innerHTML = createDetailVacancy(data);
-  modal.append(modalMain);
   modal.showModal();
   document.body.classList.add("scroll-lock");
 }
@@ -109,31 +99,26 @@ const closeModal = ({currentTarget, target}) => {
 }
 
 const init = () => {
+  const filterForm = document.querySelector(".filter__form");
   const cardsList = document.querySelector(".cards__list");
 
   // Select city
   const selectCity = document.querySelector("#city");
   const choicesCity = new Choices(selectCity, {
-    searchEnabled: false,
-    itemSelectText: ""
+    searchEnabled: false, itemSelectText: ""
   })
 
-  getData(
-    `${API_URL}${LOCATIONS_URL}`,
-    (citiesData) => {
-      const cities = citiesData.map(city => ({value: city}))
-      choicesCity.setChoices(cities, 'value', 'label', true)
-    },
-    renderError
-  );
+  getData(`${API_URL}${LOCATIONS_URL}`, (citiesData) => {
+    const cities = citiesData.map(city => ({value: city}))
+    choicesCity.setChoices(cities, 'value', 'label', true)
+  }, renderError);
 
   // Cards
   const urlVacancy = new URL(`${API_URL}${VACANCY_URL}`);
 
-  getData(urlVacancy,
-    (data) => renderVacancy(data, cardsList),
-    renderError);
+  getData(urlVacancy, (data) => renderVacancy(data, cardsList), renderError);
 
+  // Modal
   cardsList.addEventListener("click", ({target}) => {
     const vacancyCard = target.closest(".vacancy");
     if (vacancyCard) {
@@ -142,7 +127,22 @@ const init = () => {
     }
   })
 
-  modal.addEventListener("click", closeModal)
+  modal.addEventListener("click", closeModal);
+
+  // Filter
+  filterForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(filterForm);
+
+    const urlWithParam = new URL(`${API_URL}${VACANCY_URL}`);
+
+    formData.forEach((value, key) => {
+      urlWithParam.searchParams.append(key, value);
+    });
+
+    getData(urlWithParam, (data) => renderVacancy(data, cardsList), renderError);
+  })
 }
 
 init();
