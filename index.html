@@ -16,7 +16,7 @@
 <header class="header">
     <div class="container header__container">
         <img src="img/logo.svg" alt="WorkSpace">
-        <a href="#" class="header__link">Посмотреть вакансии</a>
+        <a href="#vacancies" class="header__link">Посмотреть вакансии</a>
     </div>
 </header>
 <main>
@@ -152,56 +152,7 @@
             <section class="vacancies__cards cards">
                 <h2 class="cards__title visually-hidden">Список вакансий</h2>
 
-                <ul class="cards__list">
-                    <li class="cards__item">
-                        <article class="vacancy" tabindex="0">
-                            <img class="vacancy__img" src="img/yadro.svg" alt="Логотип компании YADRO">
-
-                            <p class="vacancy__company">YADRO</p>
-
-                            <h3 class="vacancy__title">Инженер</h3>
-
-                            <ul class="vacancy__fields">
-                                <li class="vacancy__field">от 150 000 ₽</li>
-                                <li class="vacancy__field">полная занятость</li>
-                                <li class="vacancy__field">офис</li>
-                                <li class="vacancy__field">опыт от 3-х лет</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="cards__item">
-                        <article class="vacancy" tabindex="0">
-                            <img class="vacancy__img" src="img/vkusvill.png" alt="Логотип компании ВкусВилл">
-
-                            <p class="vacancy__company">ВкусВилл</p>
-
-                            <h3 class="vacancy__title">Повар-кондитер</h3>
-
-                            <ul class="vacancy__fields">
-                                <li class="vacancy__field">от 50 000 ₽</li>
-                                <li class="vacancy__field">частичная занятость</li>
-                                <li class="vacancy__field">офис</li>
-                                <li class="vacancy__field">опыт не важен</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="cards__item">
-                        <article class="vacancy" tabindex="0">
-                            <img class="vacancy__img" src="img/creative.svg" alt="Логотип компании Creative People">
-
-                            <p class="vacancy__company">Creative People</p>
-
-                            <h3 class="vacancy__title">Графический дизайнер</h3>
-
-                            <ul class="vacancy__fields">
-                                <li class="vacancy__field">от 110 000 ₽</li>
-                                <li class="vacancy__field">проектная работа</li>
-                                <li class="vacancy__field">удаленный</li>
-                                <li class="vacancy__field">опыт от 1 года до 3-х лет</li>
-                            </ul>
-                        </article>
-                    </li>
-                </ul>
+                <ul class="cards__list"></ul>
             </section>
         </div>
     </div>
@@ -223,5 +174,15 @@
         </ul>
     </div>
 </footer>
+
+<dialog class="modal">
+    <button class="modal__close">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.7833 10L15.3889 5.39447C15.4799 5.28819 15.5275 5.15149 15.5221 5.01167C15.5167 4.87185 15.4587 4.73921 15.3598 4.64027C15.2608 4.54133 15.1282 4.48337 14.9884 4.47797C14.8486 4.47257 14.7118 4.52013 14.6056 4.61114L10 9.2167L5.39446 4.60558C5.28984 4.50097 5.14796 4.4422 5.00001 4.4422C4.85207 4.4422 4.71018 4.50097 4.60557 4.60558C4.50095 4.7102 4.44218 4.85208 4.44218 5.00003C4.44218 5.14797 4.50095 5.28986 4.60557 5.39447L9.21668 10L4.60557 14.6056C4.54741 14.6554 4.50018 14.7167 4.46683 14.7856C4.43349 14.8545 4.41475 14.9296 4.41179 15.0061C4.40884 15.0826 4.42173 15.1589 4.44966 15.2302C4.47759 15.3015 4.51995 15.3662 4.5741 15.4204C4.62824 15.4745 4.69299 15.5169 4.76428 15.5448C4.83557 15.5728 4.91186 15.5856 4.98838 15.5827C5.06489 15.5797 5.13996 15.561 5.20888 15.5277C5.27781 15.4943 5.3391 15.4471 5.3889 15.3889L10 10.7834L14.6056 15.3889C14.7118 15.4799 14.8486 15.5275 14.9884 15.5221C15.1282 15.5167 15.2608 15.4587 15.3598 15.3598C15.4587 15.2608 15.5167 15.1282 15.5221 14.9884C15.5275 14.8486 15.4799 14.7119 15.3889 14.6056L10.7833 10Z"
+                  fill="#CCCCCC"/>
+        </svg>
+    </button>
+    <div class="modal__main"></div>
+</dialog>
 </body>
 </html>

@@ -1,0 +1,37 @@
+.modal {
+  border: 0;
+  padding: 0;
+  border-radius: 16px;
+}
+
+.modal::backdrop {
+  background: rgba(0 0 0 / 50%);
+}
+
+.modal_open {
+  display: flex;
+}
+
+.modal__main {
+  position: relative;
+  margin: auto;
+  cursor: default;
+}
+
+.modal__close {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  position: fixed;
+  top: 35px;
+  right: 35px;
+  outline: 1px solid transparent;
+  line-height: 0;
+  border-radius: 3px;
+}
+
+.modal__close:focus-visible {
+  outline-color: gray;
+}

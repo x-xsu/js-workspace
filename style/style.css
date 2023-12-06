@@ -5,7 +5,12 @@
   url("../fonts/inter-regular.woff2") format("woff2");
 }
 
+html, body {
+  scrollbar-gutter: stable;
+}
+
 html {
+  scroll-behavior: smooth;
   box-sizing: border-box;
 }
 
@@ -77,4 +82,11 @@ input {
   max-width: calc(var(--width) + var(--padding) * 2);
   margin-inline: auto;
   padding-inline: var(--padding);
+}
+
+.scroll-lock {
+  overflow: hidden;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overscroll-behavior: none;
 }
