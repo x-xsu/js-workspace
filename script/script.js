@@ -104,19 +104,9 @@ const closeModal = ({currentTarget, target}) => {
   const isClickedOnBackDrop = target === modalEl
   if (isClickedOnBackDrop) {
     modalEl.close()
-  }
-}
-
-modal.addEventListener("click", closeModal)
-
-modal.addEventListener("click", (e) => {
-  const modalMain = modal.querySelector(".modal__main");
-  if (modalMain !== e.target && !modalMain.contains(e.target)) {
-    modalMain.innerHTML = '';
-    modal.close();
     document.body.classList.remove("scroll-lock");
   }
-});
+}
 
 const init = () => {
   const cardsList = document.querySelector(".cards__list");
@@ -151,6 +141,8 @@ const init = () => {
       openModal(vacancyId);
     }
   })
+
+  modal.addEventListener("click", closeModal)
 }
 
 init();
