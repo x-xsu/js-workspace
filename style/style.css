@@ -90,3 +90,22 @@ input {
   -webkit-overflow-scrolling: none;
   overscroll-behavior: none;
 }
+
+@media (max-width: 1140px) {
+  .container {
+    --width: 100%;
+    --padding: 72px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    --padding: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    --padding: 15px;
+  }
+}

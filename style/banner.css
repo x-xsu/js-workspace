@@ -11,14 +11,18 @@
   content: "";
   position: absolute;
   right: -9px;
-  top: 0;
-  width: 421px;
-  height: 421px;
+  top: 50%;
+  transform: translateY(-50%);
+  --size: 421px;
+  width: var(--size);
+  height: var(--size);
   background: url("../img/laptop.png") no-repeat center/contain;
 }
 
 .banner__title {
-  font-size: 90px;
+  position: relative;
+  z-index: 2;
+  font-size: clamp(64px, 6vw, 90px);
   letter-spacing: 1.8px;
   text-transform: uppercase;
 }
@@ -26,4 +30,48 @@
 .banner__title span {
   display: block;
   color: #2A18FF;
+}
+
+@media (max-width: 1140px) {
+  .banner {
+    padding-block: 40px;
+  }
+
+  .banner__container {
+    padding-block: 53px;
+  }
+
+  .banner__container::after {
+    --size: 340px;
+    right: 32px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .banner {
+    padding-block: 30px;
+  }
+
+  .banner__container {
+    padding-block: 40px;
+  }
+
+  .banner__container::after {
+    --size: 269px;
+    right: 5px;
+  }
+
+  .banner__title {
+    font-size: clamp(32px, 7vw, 52px);
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    padding-block: 20px;
+  }
+
+  .banner__container {
+    padding-block: 0;
+  }
 }
